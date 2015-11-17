@@ -1,0 +1,32 @@
+<?xml version = "1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="CCDB" targetNamespace="CCDB">
+
+<xs:element name="PersonName" type="xs:string"/>
+<xs:element name="PId" type="xs:string"/>
+<xs:element name="OId" type="xs:string"/>
+<xs:element name="OrgName" type="xs:string"/>
+
+<xs:element name="Person">
+	<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PId"/>
+				<xs:element ref="PersonName"/>
+			</xs:sequence>
+		</xs:complexType>
+</xs:element>
+
+	<xs:element name="CCDB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Person" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<!-- Definition of keys -->
+		<xs:key name="PrimaryKeyForPerson">
+			<xs:selector xpath="Person"/>
+			<xs:field xpath="PId"/>
+		</xs:key>
+	</xs:element>
+
+</xs:schema>
