@@ -1,61 +1,45 @@
-<?xml version="1.0"?>
-<!--CSE532 Project 3-->
-<!--File name: tss.xml-->
-<!--Author Kin Sum Liu (109247869)-->
-<!--Brief description: This contains all the data we need. -->
-<!--"TSS" is the name of the root element that represents the list of shows-->
-<!--I pledge my honor that all parts of this project were done by me alone and without collaboration with anybody else-->
-<CCDB xmlns="CCDB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="CCDB.xsd">
+<!--CSE532 Project 3--><!--File name: tss.xml--><!--Author Kin Sum Liu (109247869)--><!--Brief description: This contains all the data we need. --><!--"TSS" is the name of the root element that represents the list of shows--><!--I pledge my honor that all parts of this project were done by me alone and without collaboration with anybody else-->
+<CCDB xmlns="http://localhost:8080/exist/CCDB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost:8080/exist/CCDB CCDB.xsd">
     <Persons>
         <Person>
             <PersonName>Ann</PersonName>
             <PId>p1</PId>
         </Person>
-        
         <Person>
             <PersonName>John</PersonName>
             <PId>p2</PId>
         </Person>
-        
         <Person>
             <PersonName>Joe</PersonName>
             <PId>p3</PId>
         </Person>
-
         <Person>
             <PersonName>May</PersonName>
             <PId>p4</PId>
         </Person>
-
         <Person>
             <PersonName>Bob</PersonName>
             <PId>p5</PId>
         </Person>
-
         <Person>
             <PersonName>Faye</PersonName>
             <PId>p6</PId>
         </Person>
-
         <Person>
             <PersonName>Bill</PersonName>
             <PId>p7</PId>
         </Person>
-
         <Person>
             <PersonName>Sally</PersonName>
             <PId>p8</PId>
         </Person>
-
         <Person>
             <PersonName>Miriam</PersonName>
             <PId>p9</PId>
         </Person>
-
         <Person>
             <PersonName>April</PersonName>
             <PId>p10</PId>
         </Person>
     </Persons>
-   
 </CCDB>
