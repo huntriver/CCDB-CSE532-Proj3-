@@ -2,26 +2,77 @@
     <xs:element name="PersonName" type="xs:string"/>
     <xs:element name="PId" type="xs:string"/>
     <xs:element name="OId" type="xs:string"/>
+    <xs:element name="CId" type="xs:string"/>
+    <xs:element name="Owner" type="xs:string"/>
     <xs:element name="OrgName" type="xs:string"/>
+    <xs:element name="Limit" type="xs:decimal"/>
+    <xs:element name="Balance" type="xs:decimal"/>
+    
     <xs:element name="Person">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="PId"/>
                 <xs:element ref="PersonName"/>
+                <xs:element ref="PId"/>
+                
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="CCDB">
+
+    <xs:element name="Card">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="CId"/>
+                <xs:element ref="Owner"/>
+                <xs:element ref="Limit"/>
+                <xs:element ref="Balance"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="Persons">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="Person" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
-		
-		<!-- Definition of keys -->
+
+    </xs:element>  
+   
+
+   <xs:element name="Cards">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Card" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+    </xs:element>  
+
+    <xs:element name="CCDB">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Persons" />
+                <xs:element ref="Cards" />
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- Definition of keys -->
         <xs:key name="PrimaryKeyForPerson">
             <xs:selector xpath="Person"/>
             <xs:field xpath="PId"/>
         </xs:key>
+
+        <xs:key name="PrimaryKeyForCard">
+            <xs:selector xpath="Card"/>
+            <xs:field xpath="CId"/>
+        </xs:key>
+
+        <xs:keyref name="FKOwner" refer="PrimaryKeyForPerson">
+            <xs:selector xpath="Card"/>
+            <xs:field xpath="Owner"/>
+        </xs:keyref>
+
+
     </xs:element>
 </xs:schema>

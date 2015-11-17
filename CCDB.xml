@@ -1,4 +1,3 @@
-<!--CSE532 Project 3--><!--File name: tss.xml--><!--Author Kin Sum Liu (109247869)--><!--Brief description: This contains all the data we need. --><!--"TSS" is the name of the root element that represents the list of shows--><!--I pledge my honor that all parts of this project were done by me alone and without collaboration with anybody else-->
 <CCDB xmlns="http://localhost:8080/exist/CCDB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost:8080/exist/CCDB CCDB.xsd">
     <Persons>
         <Person>
@@ -42,4 +41,141 @@
             <PId>p10</PId>
         </Person>
     </Persons>
+
+    <Cards>
+        <Card>
+            <CId>c1</CId>
+            <Owner>o1</Owner>
+            <Limit>11000</Limit>
+            <Balance>10001</Balance>
+        </Card>
+
+        <Card>
+            <CId>c2</CId>
+            <Owner>o2</Owner>
+            <Limit>26000</Limit>
+            <Balance>18000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c3</CId>
+            <Owner>o3</Owner>
+            <Limit>28000</Limit>
+            <Balance>27500</Balance>
+        </Card>
+
+        <Card>
+            <CId>c4</CId>
+            <Owner>o4</Owner>
+            <Limit>27200</Limit>
+            <Balance>26500</Balance>
+        </Card>
+
+        <Card>
+            <CId>c5</CId>
+            <Owner>p1</Owner>
+            <Limit>26000</Limit>
+            <Balance>1000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c6</CId>
+            <Owner>p3</Owner>
+            <Limit>28000</Limit>
+            <Balance>5000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c7</CId>
+            <Owner>p5</Owner>
+            <Limit>20000</Limit>
+            <Balance>5000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c8</CId>
+            <Owner>p4</Owner>
+            <Limit>26000</Limit>
+            <Balance>5000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c9</CId>
+            <Owner>p6</Owner>
+            <Limit>25000</Limit>
+            <Balance>3000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c10</CId>
+            <Owner>p7</Owner>
+            <Limit>30000</Limit>
+            <Balance>4000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c11</CId>
+            <Owner>p9</Owner>
+            <Limit>30000</Limit>
+            <Balance>4000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c12</CId>
+            <Owner>p10</Owner>
+            <Limit>30000</Limit>
+            <Balance>4000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c13</CId>
+            <Owner>p9</Owner>
+            <Limit>10000</Limit>
+            <Balance>1000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c14</CId>
+            <Owner>p9</Owner>
+            <Limit>10000</Limit>
+            <Balance>2000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c15</CId>
+            <Owner>p9</Owner>
+            <Limit>50000</Limit>
+            <Balance>2000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c16</CId>
+            <Owner>p8</Owner>
+            <Limit>24000</Limit>
+            <Balance>2000</Balance>
+        </Card>
+
+        <Card>
+            <CId>c17</CId>
+            <Owner>p8</Owner>
+            <Limit>24000</Limit>
+            <Balance>0</Balance>
+        </Card>
+
+        <Card>
+            <CId>c18</CId>
+            <Owner>p8</Owner>
+            <Limit>2000</Limit>
+            <Balance>110</Balance>
+        </Card>
+
+        <Card>
+            <CId>c19</CId>
+            <Owner>p8</Owner>
+            <Limit>2000</Limit>
+            <Balance>220</Balance>
+        </Card>
+
+
+    </Cards>
 </CCDB>
