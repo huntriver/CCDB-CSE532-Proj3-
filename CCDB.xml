@@ -3,44 +3,94 @@
         <Person>
             <PersonName>Ann</PersonName>
             <PId>p1</PId>
+            <OwnedCard>c5</OwnedCard>
         </Person>
         <Person>
             <PersonName>John</PersonName>
             <PId>p2</PId>
+
         </Person>
         <Person>
             <PersonName>Joe</PersonName>
             <PId>p3</PId>
+            <OwnedCard>c6</OwnedCard>
         </Person>
         <Person>
             <PersonName>May</PersonName>
             <PId>p4</PId>
+            <OwnedCard>c8</OwnedCard>
         </Person>
         <Person>
             <PersonName>Bob</PersonName>
             <PId>p5</PId>
+            <OwnedCard>c7</OwnedCard>
         </Person>
         <Person>
             <PersonName>Faye</PersonName>
             <PId>p6</PId>
+            <OwnedCard>c9</OwnedCard>
         </Person>
         <Person>
             <PersonName>Bill</PersonName>
             <PId>p7</PId>
+            <OwnedCard>c10</OwnedCard>
         </Person>
         <Person>
             <PersonName>Sally</PersonName>
             <PId>p8</PId>
+            <OwnedCard>c16</OwnedCard>
+            <OwnedCard>c17</OwnedCard>
+            <OwnedCard>c18</OwnedCard>
+            <OwnedCard>c19</OwnedCard>
         </Person>
         <Person>
             <PersonName>Miriam</PersonName>
             <PId>p9</PId>
+            <OwnedCard>c11</OwnedCard>
+            <OwnedCard>c13</OwnedCard>
+            <OwnedCard>c14</OwnedCard>
+            <OwnedCard>c15</OwnedCard>
         </Person>
         <Person>
             <PersonName>April</PersonName>
             <PId>p10</PId>
+            <OwnedCard>c12</OwnedCard>
         </Person>
     </Persons>
+
+    <Organizations>
+        <Organization>
+            <OrganizationName>Acme</OrganizationName>
+            <OId>o1</OId>
+            <OwnedCard>c1</OwnedCard>
+            <Signer>p4</Signer>
+            <Signer>p3</Signer>
+        </Organization>
+
+        <Organization>
+            <OrganizationName>GoodMood</OrganizationName>
+            <OId>o2</OId>
+            <OwnedCard>c2</OwnedCard>
+            <Signer>p1</Signer>
+            <Signer>p4</Signer>
+        </Organization>
+
+        <Organization>
+            <OrganizationName>SuperiorCruft</OrganizationName>
+            <OId>o3</OId>
+            <OwnedCard>c3</OwnedCard>
+            <Signer>p5/Signer>
+        </Organization>
+
+        <Organization>
+            <OrganizationName>AwesomeProducts</OrganizationName>
+            <OId>o4</OId>
+            <OwnedCard>c4</OwnedCard>
+            <Signer>p1</Signer>
+            <Signer>p6</Signer>
+            <Signer>p7</Signer>
+        </Organization>
+    </Organizations>
 
     <Cards>
         <Card>
@@ -48,6 +98,9 @@
             <Owner>o1</Owner>
             <Limit>11000</Limit>
             <Balance>10001</Balance>
+            <AuthorizedUser>p8</AuthorizedUser>
+            <AuthorizedUser>p9</AuthorizedUser>
+           
         </Card>
 
         <Card>
@@ -55,6 +108,9 @@
             <Owner>o2</Owner>
             <Limit>26000</Limit>
             <Balance>18000</Balance>
+            <AuthorizedUser>p2</AuthorizedUser>
+            <AuthorizedUser>p8</AuthorizedUser>
+            <AuthorizedUser>p9</AuthorizedUser>
         </Card>
 
         <Card>
@@ -62,6 +118,8 @@
             <Owner>o3</Owner>
             <Limit>28000</Limit>
             <Balance>27500</Balance>
+            <AuthorizedUser>p8</AuthorizedUser>
+            <AuthorizedUser>p9</AuthorizedUser>
         </Card>
 
         <Card>
@@ -69,6 +127,7 @@
             <Owner>o4</Owner>
             <Limit>27200</Limit>
             <Balance>26500</Balance>
+            <AuthorizedUser>p10</AuthorizedUser>
         </Card>
 
         <Card>
@@ -76,6 +135,7 @@
             <Owner>p1</Owner>
             <Limit>26000</Limit>
             <Balance>1000</Balance>
+            <AuthorizedUser>p7</AuthorizedUser>
         </Card>
 
         <Card>
@@ -111,6 +171,8 @@
             <Owner>p7</Owner>
             <Limit>30000</Limit>
             <Balance>4000</Balance>
+            <AuthorizedUser>p3</AuthorizedUser>
+            <AuthorizedUser>p4</AuthorizedUser>
         </Card>
 
         <Card>
@@ -125,6 +187,7 @@
             <Owner>p10</Owner>
             <Limit>30000</Limit>
             <Balance>4000</Balance>
+            <AuthorizedUser>p6</AuthorizedUser>
         </Card>
 
         <Card>

@@ -1,19 +1,35 @@
 <xs:schema xmlns="http://localhost:8080/exist/CCDB" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost:8080/exist/CCDB">
     <xs:element name="PersonName" type="xs:string"/>
     <xs:element name="PId" type="xs:string"/>
+    <xs:element name="OrganizationName" type="xs:string"/>
     <xs:element name="OId" type="xs:string"/>
     <xs:element name="CId" type="xs:string"/>
     <xs:element name="Owner" type="xs:string"/>
     <xs:element name="OrgName" type="xs:string"/>
     <xs:element name="Limit" type="xs:decimal"/>
     <xs:element name="Balance" type="xs:decimal"/>
-    
+    <xs:element name="AuthorizedUser" type="xs:string"/>
+    <xs:element name="OwnedCard" type="xs:string"/>
+    <xs:element name="Signer" type="xs:string"/>
+
     <xs:element name="Person">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="PersonName"/>
                 <xs:element ref="PId"/>
+                <xs:element ref="OwnedCard" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Organization">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="OrganizationName"/>
+                <xs:element ref="OId"/>
                 
+                <xs:element ref="OwnedCard" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="Signer" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -25,6 +41,7 @@
                 <xs:element ref="Owner"/>
                 <xs:element ref="Limit"/>
                 <xs:element ref="Balance"/>
+                <xs:element ref="AuthorizedUser" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -33,17 +50,25 @@
     <xs:element name="Persons">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="Person" maxOccurs="unbounded"/>
+                <xs:element ref="Person" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
 
     </xs:element>  
    
+    <xs:element name="Organizations">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Organization" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+
+    </xs:element> 
 
    <xs:element name="Cards">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="Card" maxOccurs="unbounded"/>
+                <xs:element ref="Card" maxOccurs="unbounded"  minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
 
@@ -53,7 +78,9 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="Persons" />
+                <xs:element ref="Organizations" />
                 <xs:element ref="Cards" />
+                
             </xs:sequence>
         </xs:complexType>
         
@@ -63,16 +90,29 @@
             <xs:field xpath="PId"/>
         </xs:key>
 
+        <xs:key name="PrimaryKeyForOrganization">
+            <xs:selector xpath="Organization"/>
+            <xs:field xpath="OId"/>
+        </xs:key>
+
         <xs:key name="PrimaryKeyForCard">
             <xs:selector xpath="Card"/>
             <xs:field xpath="CId"/>
         </xs:key>
 
-        <xs:keyref name="FKOwner" refer="PrimaryKeyForPerson">
+        <xs:keyref name="FKOwnedCard" refer="PrimaryKeyForCard">
             <xs:selector xpath="Card"/>
-            <xs:field xpath="Owner"/>
+            <xs:field xpath="CId"/>
         </xs:keyref>
 
+        <xs:keyref name="FKAuthorizedUser" refer="PrimaryKeyForPerson">
+            <xs:selector xpath="Card"/>
+            <xs:field xpath="AuthorizedUser"/>
+        </xs:keyref>
 
+        <xs:keyref name="FKSigner" refer="PrimaryKeyForPerson">
+            <xs:selector xpath="Organization"/>
+            <xs:field xpath="Signer"/>
+        </xs:keyref>
     </xs:element>
 </xs:schema>
