@@ -79,7 +79,7 @@
             <OrganizationName>SuperiorCruft</OrganizationName>
             <OId>o3</OId>
             <OwnedCard>c3</OwnedCard>
-            <Signer>p5/Signer>
+            <Signer>p5</Signer>
         </Organization>
 
         <Organization>

@@ -1,6 +1,40 @@
 xquery version "3.0";
 declare default element namespace "http://localhost:8080/exist/CCDB";
 let $CCDB := doc("/db/CCDB/CCDB.xml")/CCDB
+let $xxx:=
+       <authusers>
+        {
+            
+            for 
+            	$p in $CCDB//Person,
+              	$c in $CCDB//Card,
+              	$a in $c//AuthorizedUser
+			where $p/PId=$a
+			return 
+			    <authuser>
+			        {$p/PId} {$c/CId}
+	
+  
+			        
+			    </authuser>
+        }
+		{
+		for 
+            	$p in $CCDB//Person,
+              	$c in $CCDB//Card,
+              	$o in $CCDB//Organization,
+              	$s in $o//Signer
+			where $p/PId=$s and
+			      $o/OId=$c/Owner
+			return 
+			    <authuser>
+			        {$p/PId} {$c/CId}
+	
+  
+			        
+			    </authuser>
+        }
+  </authusers>
 return
     <Query>
      <query1>
@@ -26,38 +60,13 @@ return
 			        
 			    </result>
         }
-  </query1>
-  <query2>
-        {
-            
-            for 
-            	$p in $CCDB//Person,
-              	$c in $CCDB//Card,
-              	$a in $c//AuthorizedUser
-			where $p/PId=$a
-			return 
-			    <result>
-			        {$p/PId} {$c/CId}
-	
-  
-			        
-			    </result>
-        }
-		union {
-		for 
-            	$p in $CCDB//Person,
-              	$c in $CCDB//Card,
-              	$a in $c//AuthorizedUser
-			where $p/PId=$a
-			return 
-			    <result>
-			        {$p/PId} {$c/CId}
-	
-  
-			        
-			    </result>
-        }
-  </query2>
+     </query1>
+     <query2>
+         {
+             distinct-values($xxx/authuser)
+         }
+    </query2>
+ 
   
   </Query>
 
