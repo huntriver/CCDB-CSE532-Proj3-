@@ -63,10 +63,40 @@ return
      </query1>
      <query2>
          {
-             distinct-values($xxx/authuser)
+            for $p in $CCDB//Person
+                
+            let $a:= $xxx//authuser[PId=$p/PId]  
+            where count($p//OwnedCard)>=4
+                  and count($a)>=3
+            return
+                <result>
+			        {$p/PId} {$p/PersonName}
+			        
+	
+			        
+			        
+			    </result>
+            
          }
     </query2>
- 
+ <query3>
+         {
+            for $p in $CCDB//Person
+                
+            let $a:= $xxx//authuser[PId=$p/PId]  
+            where count($p//OwnedCard)>=4
+                  and count($a)>=3
+            return
+                <result>
+			        {$p/PId} {$p/PersonName}
+			        
+	
+			        
+			        
+			    </result>
+            
+         }
+    </query3>
   
   </Query>
 
