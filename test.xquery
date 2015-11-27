@@ -1,3 +1,13 @@
+<!-- 
+I pledge my honor that all parts of this project were done by me alone and
+without collaboration with anybody else.
+
+CSE532 -- Project 3
+File name: CCDB.xsd
+Author: Xinhe Huang (108390641)
+Brief description: XML schema documents
+-->
+
 xquery version "3.0";
 declare default element namespace "http://localhost:8080/exist/CCDB";
 declare function local:indirectuser($direct as element()*,$indirect as element()*) as element()*

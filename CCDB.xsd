@@ -1,3 +1,12 @@
+<!-- 
+I pledge my honor that all parts of this project were done by me alone and
+without collaboration with anybody else.
+
+CSE532 -- Project 3
+File name: CCDB.xsd
+Author: Xinhe Huang (108390641)
+Brief description: XML schema documents
+-->
 <xs:schema xmlns="http://localhost:8080/exist/CCDB" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost:8080/exist/CCDB">
     <xs:element name="PersonName" type="xs:string"/>
     <xs:element name="PId" type="xs:string"/>

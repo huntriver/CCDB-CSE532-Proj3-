@@ -1,3 +1,12 @@
+<!-- 
+I pledge my honor that all parts of this project were done by me alone and
+without collaboration with anybody else.
+
+CSE532 -- Project 3
+File name: CCDB.xml
+Author: Xinhe Huang (108390641)
+Brief description: XML data documents
+-->
 <CCDB xmlns="http://localhost:8080/exist/CCDB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost:8080/exist/CCDB CCDB.xsd">
     <Persons>
         <Person>

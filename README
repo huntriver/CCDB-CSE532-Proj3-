@@ -1,0 +1,8 @@
+<!-- 
+CSE532 -- Project 3
+File name: CCDB.xml
+Author: Xinhe Huang (108390641)
+Brief description: instructions for deploying application in eXist-db
+-->
+
+Go to the main page of exist-db (localhost:8080/exist), then click Collection button. Create a new collection named CCDB under the directory /db. Open the directory and upload all the files. In eXide, open the queries and click Run.The results will be shown in a new page.
